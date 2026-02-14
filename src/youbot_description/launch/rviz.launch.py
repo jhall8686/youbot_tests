@@ -1,6 +1,6 @@
 import os
 
-from ament_index_python.packages import get_package_share_directory
+from ament_index_python.packages import get_package_share_directory  # type: ignore
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
@@ -9,6 +9,10 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
+# Added imports
+
+from launch.substitutions import Command
+from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     # Get the launch directory
@@ -43,17 +47,22 @@ def generate_launch_description():
         'urdf_file',
         default_value=os.path.join(bringup_dir, 'urdf', 'youbot.urdf'),
         description='Whether to start RVIZ')
- 
+
+
+    robot_description = ParameterValue(
+        Command(['cat ', urdf_file]),
+        value_type=str
+    )
 
     start_robot_state_publisher_cmd = Node(
         condition=IfCondition(use_robot_state_pub),
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
-        output='screen',
-        #parameters=[{'use_sim_time': use_sim_time}],
-        arguments=[urdf_file])
-    
+        parameters=[{'robot_description': robot_description}],
+        output='screen'
+    )
+
     start_joint_state_publisher_cmd = Node(
         condition=IfCondition(use_joint_state_pub),
         package='joint_state_publisher_gui',

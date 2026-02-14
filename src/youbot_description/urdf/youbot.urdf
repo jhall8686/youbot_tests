@@ -71,7 +71,9 @@
 
     </plugin>
   </gazebo>
-
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
   <link name="base_footprint">
   </link>
   <joint name="base_footprint_joint" type="fixed">
@@ -88,13 +90,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_base/base.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_base/base.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_base/base_convex.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_base/base_convex.dae"/>
       </geometry>
     </collision>
   </link>
@@ -128,7 +130,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_base/front-left_wheel.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_base/front-left_wheel.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -168,7 +170,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_base/front-right_wheel.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_base/front-right_wheel.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -209,7 +211,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_base/back-left_wheel.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_base/back-left_wheel.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -249,7 +251,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_base/back-right_wheel.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_base/back-right_wheel.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -274,14 +276,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/sensors/hokuyo.dae"/>
+        <mesh filename="package://youbot_description/meshes/sensors/hokuyo.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/sensors/hokuyo_convex.dae"/>
+        <mesh filename="package://youbot_description/meshes/sensors/hokuyo_convex.dae"/>
       </geometry>
     </collision>
     <sensor name='base_laser_front'
@@ -406,13 +408,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.025"/>
       <geometry>
-        <mesh filename="meshes/youbot_plate/plate.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_plate/plate.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.025"/>
       <geometry>
-        <mesh filename="meshes/youbot_plate/plate_convex.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_plate/plate_convex.dae"/>
       </geometry>
     </collision>
   </link>
@@ -431,14 +433,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm0.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm0.dae"/>
       </geometry>
     </visual>
     <collision>
       <!--<origin xyz="0.023 0 0.006" rpy="0 0 0"/>-->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm0_convex.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm0_convex.dae"/>
         <!--<cylinder length="0.078" radius="0.093"/>-->
       </geometry>
     </collision>
@@ -468,14 +470,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm1.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm1.dae"/>
       </geometry>
     </visual>
     <collision>
       <!--<origin xyz="0 0 -0.003" rpy="0 0 0" />-->
       <origin xyz="0 0 0.02" rpy="3.14159 0 0" />
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm_joint_1_convex.stl"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm_joint_1_convex.stl"/>
         <!--<cylinder length="0.102" radius="0.080"/>-->
       </geometry>
     </collision>
@@ -498,14 +500,14 @@
     <visual>
       <origin xyz="0.001 -0.03 0.077" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm2.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm2.dae"/>
       </geometry>
     </visual>
     <collision>
       <!--<origin xyz="0.001 -0.041 0.074" rpy="0 0 0" />-->
       <origin rpy="-1.570795 -1.570795 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm_joint_2_convex.stl"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm_joint_2_convex.stl"/>
         <!--<box size="0.074 0.082 0.222"/>-->
       </geometry>
     </collision>
@@ -527,14 +529,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.000 0.027 0.08"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm3.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm3.dae"/>
       </geometry>
     </visual>
     <collision>
       <!--<origin xyz="0.000 0.025 0.067" rpy="0 0 0" />-->
       <origin rpy="1.570795 0 3.14159" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm_joint_3_convex.stl"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm_joint_3_convex.stl"/>
         <!--<box size="0.064 0.054 0.192"/>-->
       </geometry>
     </collision>
@@ -556,14 +558,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.008 0.026"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm4.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm4.dae"/>
       </geometry>
     </visual>
     <collision>
       <!--<origin xyz="0 0 0.026" rpy="0 0 0" />-->
       <origin rpy="1.570795 0 3.14159" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm_joint_4_convex.stl"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm_joint_4_convex.stl"/>
         <!--<box size="0.058 0.100 0.118"/>-->
       </geometry>
     </collision>
@@ -585,13 +587,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.019"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm5.dae"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm5.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/youbot_arm/arm_joint_5_convex.stl"/>
+        <mesh filename="package://youbot_description/meshes/youbot_arm/arm_joint_5_convex.stl"/>
         <!--<box size="0.054 0.096 0.030"/>-->
       </geometry>
     </collision>
