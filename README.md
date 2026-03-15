@@ -11,3 +11,5 @@ If I were to improve this, I would use a more sophisticated inverse kinematics a
 
 Also, the angle limits were not defined properly, I just realized. They should be similar to the ones in the labs.
 
+And don't ask me about the red box. It's some Blender, .dae, .urdf horse... crap going on, so I can't be bothered, it's clear what the arm is doing even with it.
+
